@@ -22,7 +22,7 @@ public class ImplFileOperator implements  IFileOperator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Zapisano do pliku " + filename);
+        System.out.println("Saved to: " + filename);
     }
 
     @Override

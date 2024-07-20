@@ -4,40 +4,31 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ImplHumanAnalyzer implements  IHumanAnalyzer{
+public class ImplHumanAnalyzer implements IHumanAnalyzer {
     @Override
     public void AverageAge(List<Human> humans) {
         double sum = 0;
         double counter = 0;
 
-        for (Human human : humans)
-        {
+        for (Human human : humans) {
             sum += human.getAge();
             counter++;
         }
-        double averageage = sum/counter;
+        double averageAge = sum / counter;
 
-
-        System.out.println("Średni wiek ludzi wynosi: " + averageage);
-
+        System.out.println("The average age of people is: " + averageAge);
     }
 
     @Override
     public void LongestSurname(List<Human> humans) {
-
-        String surnameflag = "";
-        for (Human human : humans)
-        {
-            if (surnameflag.length() < human.getSurname().length())
-            {
-                surnameflag = human.getSurname();
+        String longestSurname = "";
+        for (Human human : humans) {
+            if (longestSurname.length() < human.getSurname().length()) {
+                longestSurname = human.getSurname();
             }
-
         }
 
-        System.out.println("Osoba z najdluzszym nazwiskiem to: " + surnameflag);
-
-
+        System.out.println("The person with the longest surname is: " + longestSurname);
     }
 
     @Override
@@ -48,7 +39,7 @@ public class ImplHumanAnalyzer implements  IHumanAnalyzer{
                 return Integer.compare(h2.getAge(), h1.getAge());
             }
         });
-        System.out.println("Lista posortowana malejąco według wieku:");
+        System.out.println("List sorted in descending order by age:");
         for (Human human : humans) {
             System.out.println(human);
         }
@@ -58,14 +49,9 @@ public class ImplHumanAnalyzer implements  IHumanAnalyzer{
     public void printwithid(List<Human> humans) {
         int id = 0;
 
-
-        for (Human human : humans)
-        {
-
+        for (Human human : humans) {
             System.out.println("Id: " + id + " " + human.getName() + " " + human.getSurname() + " " + human.getAge() + " " + human.getEmail());
             id++;
         }
-
-
     }
 }
