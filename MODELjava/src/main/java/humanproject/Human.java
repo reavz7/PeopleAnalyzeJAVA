@@ -3,6 +3,17 @@ package humanproject;
 public class Human {
     String name;
     String surname;
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     int age;
 
     public String getName() {

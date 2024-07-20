@@ -14,7 +14,7 @@ import java.util.List;
 public class ImplFileOperator implements  IFileOperator {
     @Override
     public void serialize(List<Human> humans, String filename) {
-        String csvFile = "src/main/resources/" + filename + ".csv";
+        String csvFile = "C:\\files\\" + filename;
         try (FileWriter writer = new FileWriter(csvFile)) {
             for (Human human : humans) {
                 writer.write(human.getName() + "," + human.getSurname() + "," + human.getAge() + "," + human.getEmail() + "\n");
@@ -28,7 +28,7 @@ public class ImplFileOperator implements  IFileOperator {
     @Override
     public List<Human> deserialize(String filename) {
         List<Human> humans = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/" + filename));
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\files\\" + filename));
              CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
             for (CSVRecord csvRecord : csvParser) {
                 String name = csvRecord.get(0);

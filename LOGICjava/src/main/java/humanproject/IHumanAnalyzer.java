@@ -6,5 +6,6 @@ public interface IHumanAnalyzer {
     void AverageAge(List<Human> humans);
     void LongestSurname(List<Human> humans);
     void SortedAgeDescending(List<Human> humans);
+    void printwithid(List<Human> humans);
 
 }
