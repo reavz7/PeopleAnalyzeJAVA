@@ -18,9 +18,16 @@ public class ImplHumanOperator implements IHumanOperator{
         scanner.nextLine(); // Consume the newline character left by nextInt()
         System.out.println("E-mail: ");
         String email = scanner.nextLine(); // Read the email correctly
+        if (name == null || name.isEmpty() || surname == null || surname.isEmpty() || email == null || email.isEmpty()) {
+            System.out.println("You didn't type anything in one of these: Name/Surname?Email");
+        }
+
+        else
+        {
         Human human = new Human(name, surname, age, email);
         humans.add(human);
         System.out.println("New human added!");
+        }
     }
 
 
@@ -30,17 +37,16 @@ public class ImplHumanOperator implements IHumanOperator{
         Scanner scanner = new Scanner(System.in);
         String email = scanner.nextLine();
 
-        // Iterator to safely remove elements from the list while iterating
         Iterator<Human> iterator = humans.iterator();
         boolean found = false;
 
         while (iterator.hasNext()) {
             Human human = iterator.next();
-            if (email.equals(human.getEmail())) {  // Use equals() to compare string contents
-                iterator.remove();  // Safely remove the element
+            if (email.equals(human.getEmail())) {
+                iterator.remove();
                 found = true;
                 System.out.println("Deleted successfully!");
-                break;  // Exit loop once the item is found and deleted
+                break;
             }
         }
 
