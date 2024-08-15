@@ -28,8 +28,4 @@ YOU CAN FIND A CSV FILE EXAMPLE HERE: LOGICjava/src/main/resources
 
 ###
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="java logo"  />
-</div>
-
 ###
